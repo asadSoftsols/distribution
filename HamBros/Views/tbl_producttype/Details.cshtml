@@ -1,0 +1,71 @@
+﻿@model HamBros.Models.tbl_producttype
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>tbl_producttype</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ProductTypeName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ProductTypeName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CreateBy)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CreateBy)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CreatedAt)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CreatedAt)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IsActive)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsActive)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CompanyId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CompanyId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.BranchId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.BranchId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UpdateBy)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UpdateBy)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UpdateAt)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UpdateAt)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ProductTypeID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

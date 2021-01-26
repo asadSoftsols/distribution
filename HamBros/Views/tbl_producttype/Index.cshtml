@@ -1,0 +1,91 @@
+﻿@model IEnumerable<HamBros.Models.tbl_producttype>
+
+@{
+    ViewBag.Title = "Product Types";
+}
+<script src="~/Scripts/angular.js"></script>
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+        Product Category
+        </h1>
+        <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> Setup</a></li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> Product Category</a></li>
+        <li class="active">List</li>
+        </ol>
+    </section>
+    <div ng-app="myApp">
+        <div ng-controller="myCtrl" class="divList">
+            <!-- Main content -->
+            <section class="content">
+              <div class="row">
+                <div class="col-xs-12">
+                    <div class="alert alert-success alert-dismissable" id="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        <h4><i class="icon fa fa-check"></i> Alert!</h4>
+                        <label id="outPut"></label>
+                    </div>
+                  <div class="box">
+                    <div class="box-header">
+                      <h3 class="box-title">List</h3>
+                        <a href="/tbl_producttype/Create" class="pull-right btn btn-success">Create</a>
+                    </div><!-- /.box-header -->                   
+                    <div class="box-body">
+                        <table id="example1" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.ProductTypeName)
+                                    </th>                               
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                        @foreach (var item in Model) {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ProductTypeName)
+                                </td>                            
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit",new { id=item.ProductTypeID }) |
+                                    <a href="#" data-toggle="modal" onclick="getidForDelete('@item.ProductTypeID')" data-target=".modal">Delete</a>
+                                    @*@Html.ActionLink("Details", "Details", new { id=item.ProductTypeID }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id=item.ProductTypeID })*@
+                                </td>
+                            </tr>
+                        }
+                            </tbody>
+                        </table>
+                    </div><!-- /.box-body -->
+                  </div><!-- /.box -->
+                </div><!-- /.col -->
+              </div><!--/.row-->
+             </section><!-- Main Content -->
+              <!-- Modal -->
+              <div class="modal fade" id="confirmModal" role="dialog">
+                <div class="modal-dialog">
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title">Alert!</h4>
+                    </div>
+                    <div class="modal-body">
+                      <p>Are you Sure you want to Delete??</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-success" ng-click="DeleteCat()"  id="idForDelete">OK</button>
+                      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+     </div>
+</div><!-- /.content-wrapper -->
+<script src="~/Scripts/Controller/Category.js"></script>
+

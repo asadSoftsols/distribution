@@ -1,0 +1,149 @@
+﻿@model HamBros.Models.tbl_producttype
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<script src="~/Scripts/angular.js"></script>
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+        Product Category
+        </h1>
+        <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> Setup</a></li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> Product Category</a></li>
+        <li class="active">Create</li>
+        </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content bs-form">
+        <div class="row">
+            <div ng-app="myApp">
+                <div ng-controller="myCtrl" class="divList"> 
+                    <div class="col-md-12">
+                        <!-- general form elements -->
+                        <div class="box box-primary">
+                            <div class="box-header">
+                                <h3 class="box-title">Create</h3>
+                                <a href="/tbl_producttype/Index" class="pull-right btn btn-success">Back to List</a>
+                            </div><!-- /.box-header -->
+                             <div class="alert alert-success alert-dismissable" id="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                <h4><i class="icon fa fa-check"></i> Alert!</h4>
+                                  <label id="outPut"></label>
+                             </div>
+                            <!-- form start -->
+                            <form role="form" id="form">
+                                <div class="box-body">
+                                <div class="form-group col-md-6">
+                                    <label for="productCategory">Category Type</label>
+                                    <span style="color:red">*</span>
+                                    <input type="text" class="form-control" name="ProductTypeName" id="ProductTypeName" ng-model="ProductTypeName" placeholder="Enter Product Category">
+                                    <label id="protyp_err"></label>
+                                </div>
+                                </div><!-- /.box-body --> 
+                                <div class="col-md-12">&nbsp;</div>   
+                                <div class="clearfix"></div>                
+                                <div class="box-footer">
+                                <label id="err" style="color:red"></label>
+                                <br />
+                                <button type="submit" id="submtProType"  class="btn btn-primary" ng-click="InsertData()" value="Submit">Submit</button>
+                                <button type="button" id="cancelProType" class="btn btn-danger" onclick="">Cancel</button>
+                                </div>
+                            </form>
+                        </div><!-- /.box -->
+                    </div><!--/.col (left) -->
+                </div>
+            </div>
+        </div><!--/.row-->
+        </section><!-- Main Content -->
+    </div><!-- /.content-wrapper -->
+
+
+<script src="~/Scripts/Controller/Category.js"></script>
+@*<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>tbl_producttype</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ProductTypeName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ProductTypeName)
+            @Html.ValidationMessageFor(model => model.ProductTypeName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CreateBy)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CreateBy)
+            @Html.ValidationMessageFor(model => model.CreateBy)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CreatedAt)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CreatedAt)
+            @Html.ValidationMessageFor(model => model.CreatedAt)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsActive)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsActive)
+            @Html.ValidationMessageFor(model => model.IsActive)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CompanyId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CompanyId)
+            @Html.ValidationMessageFor(model => model.CompanyId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BranchId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BranchId)
+            @Html.ValidationMessageFor(model => model.BranchId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UpdateBy)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UpdateBy)
+            @Html.ValidationMessageFor(model => model.UpdateBy)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UpdateAt)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UpdateAt)
+            @Html.ValidationMessageFor(model => model.UpdateAt)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>*@
